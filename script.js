@@ -1,5 +1,5 @@
 // Nomes permitidos para acessar a carta
-const nomesPermitidos = ["thaish","tatah","thathah","thatah"]; // Adicione mais nomes aqui, por exemplo: ["thais", "romulo"]
+const nomesPermitidos = ["thais","tata","thatha","thata"]; // Adicione mais nomes aqui, por exemplo: ["thais", "romulo"]
 
 const carta = `
 mulher que eu tanto amo,
@@ -136,4 +136,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
 
