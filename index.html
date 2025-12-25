@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>De Rômulo para Thaís</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<audio id="music" loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<!-- LOGIN -->
+<div class="container" id="login">
+  <h1>Qual é o seu nome?</h1>
+  <input type="text" id="nameInput" placeholder="Digite seu nome">
+  <button onclick="verificarNome()">Entrar 💖</button>
+  <p id="errorMsg" class="error hidden">Nome incorreto…</p>
+</div>
+
+<!-- TELA DA CARTA FECHADA -->
+<div id="initialScreen" class="hidden">
+  <img src="carta-fechada.jpg" alt="Carta de Amor" id="cartaFechada">
+</div>
+
+<!-- CARTA ABERTA -->
+<div class="container hidden" id="letter">
+  <h1>De Rômulo para Thaís ❤️</h1>
+  <div class="heart">❤️</div>
+  <p id="typedText"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('fundo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+body.login-screen {
+  align-items: flex-start;
+  padding-top: 20px;
+}
+
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 350px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  margin: 20px auto;
+  overflow: visible;
+}
+
+#letter {
+  background: transparent;
+  box-shadow: none;
+}
+
+#login {
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+  width: 60%;
+  max-width: 280px;
+  margin: 20px auto 0;
+  border-radius: 15px;
+}
+
+#login h1 {
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0 0 10px 0;
+}
+
+input {
+  padding: 8px;
+  font-size: 14px;
+  width: 85%;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+input::placeholder {
+  color: #666;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  background-color: #ff4d6d;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.hidden {
+  display: none;
+}
+
+.heart {
+  font-size: 40px;
+  margin: 15px 0;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+#letter {
+  overflow: visible;
+}
+
+#letter h1 {
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+#letter p {
+  text-align: left;
+  line-height: 1.6;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+.error {
+  color: #ff4d6d;
+  margin-top: 15px;
+  font-weight: bold;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#initialScreen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+#initialScreen.hidden {
+  display: none !important;
+}
+
+#cartaFechada {
+  width: 50%;
+  max-width: 300px;
+  cursor: pointer;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(255, 77, 109, 0.5);
+  transform-origin: center center;
+}
+
+#cartaFechada:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 60px rgba(255, 77, 109, 0.9);
+}
+
+#cartaFechada.abrir {
+  animation: abrirCarta 1.2s ease-in-out forwards;
+}
+
+@keyframes abrirCarta {
+  0% {
+    transform: scale(1) rotateY(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1) rotateY(90deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0) rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+#initialScreen.fadeOut {
+  animation: fadeOutScreen 1.2s ease-in-out forwards;
+}
+
+@keyframes fadeOutScreen {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
