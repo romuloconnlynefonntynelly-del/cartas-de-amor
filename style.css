@@ -1,0 +1,218 @@
+/* ===== CONFIGURAÇÕES GERAIS DO BODY (PÁGINA INTEIRA) ===== */
+body {
+  margin: 0; /* Remove margens padrão do navegador */
+  padding: 0; /* Remove espaçamento interno padrão */
+  font-family: Arial, sans-serif; /* Fonte padrão do site */
+
+  /* Imagem de fundo */
+  background-image: url('thais.jpeg');
+  background-size: cover; /* Faz a imagem cobrir toda a tela */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita repetição da imagem */
+  background-attachment: fixed; /* Fundo fixo ao rolar a página */
+
+  min-height: 100vh; /* Altura mínima da tela inteira */
+  display: flex; /* Usa flexbox para alinhamento */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: flex-start; /* Alinha no topo verticalmente */
+  overflow-y: auto; /* Permite rolagem vertical */
+}
+
+/* ===== BODY ESPECÍFICO PARA TELA DE LOGIN ===== */
+body.login-screen {
+  align-items: flex-start; /* Conteúdo no topo */
+  padding-top: 20px; /* Espaço acima */
+}
+
+/* ===== CONTAINER PRINCIPAL (CAIXA BRANCA) ===== */
+.container {
+  background: white; /* Fundo branco */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 20px; /* Bordas arredondadas */
+  width: 80%; /* Largura relativa */
+  max-width: 350px; /* Largura máxima */
+  text-align: center; /* Texto centralizado */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* Sombra */
+  margin: 20px auto; /* Margem automática */
+  overflow: visible; /* Permite conteúdo extrapolar */
+}
+
+/* ===== CARTA (SEM FUNDO E SEM SOMBRA) ===== */
+#letter {
+  background: transparent; /* Fundo transparente */
+  box-shadow: none; /* Remove sombra */
+}
+
+/* ===== CAIXA DE LOGIN ===== */
+#login {
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.02); /* Fundo quase transparente */
+  backdrop-filter: blur(3px); /* Efeito de desfoque */
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Borda suave */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02); /* Sombra leve */
+  width: 60%;
+  max-width: 280px;
+  margin: 20px auto 0;
+  border-radius: 15px;
+}
+
+/* ===== TÍTULO DO LOGIN ===== */
+#login h1 {
+  color: #fff; /* Texto branco */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Sombra no texto */
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0 0 10px 0;
+}
+
+/* ===== CAMPOS DE TEXTO (INPUT) ===== */
+input {
+  padding: 8px;
+  font-size: 14px;
+  width: 85%;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+/* Texto de exemplo dentro do input */
+input::placeholder {
+  color: #666;
+}
+
+/* ===== BOTÕES ===== */
+button {
+  margin-top: 10px;
+  padding: 8px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  background-color: #ff4d6d; /* Rosa */
+  color: white;
+  cursor: pointer; /* Mãozinha ao passar o mouse */
+}
+
+/* Efeito ao passar o mouse no botão */
+button:hover {
+  transform: scale(1.05); /* Aumenta levemente */
+}
+
+/* ===== CLASSE PARA ESCONDER ELEMENTOS ===== */
+.hidden {
+  display: none; /* Esconde completamente */
+}
+
+/* ===== CORAÇÃO ANIMADO ===== */
+.heart {
+  font-size: 40px;
+  margin: 15px 0;
+  animation: pulse 1.2s infinite; /* Animação contínua */
+}
+
+/* Animação de pulsar */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* ===== TEXTO DA CARTA ===== */
+#letter h1 {
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+#letter p {
+  text-align: left; /* Texto alinhado à esquerda */
+  line-height: 1.6; /* Espaçamento entre linhas */
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  white-space: pre-wrap; /* Mantém quebras de linha */
+  word-wrap: break-word; /* Quebra palavras longas */
+  max-width: 100%;
+}
+
+/* ===== MENSAGEM DE ERRO ===== */
+.error {
+  color: #ff4d6d; /* Vermelho/rosa */
+  margin-top: 15px;
+  font-weight: bold;
+  animation: fadeIn 0.4s ease; /* Animação de entrada */
+}
+
+/* Animação de aparecer suavemente */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===== TELA INICIAL ===== */
+#initialScreen {
+  height: 100vh; /* Tela inteira */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  background: transparent;
+}
+
+/* Força esconder a tela inicial */
+#initialScreen.hidden {
+  display: none !important;
+}
+
+/* ===== IMAGEM DA CARTA FECHADA ===== */
+#cartaFechada {
+  width: 50%;
+  max-width: 300px;
+  cursor: pointer; /* Indica que é clicável */
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(255, 77, 109, 0.5);
+  transform-origin: center center;
+}
+
+/* Efeito ao passar o mouse na carta */
+#cartaFechada:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 60px rgba(255, 77, 109, 0.9);
+}
+
+/* Classe aplicada quando a carta está abrindo */
+#cartaFechada.abrir {
+  animation: abrirCarta 1.2s ease-in-out forwards;
+}
+
+/* Animação de abrir a carta */
+@keyframes abrirCarta {
+  0% {
+    transform: scale(1) rotateY(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1) rotateY(90deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0) rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+/* ===== FADE OUT DA TELA INICIAL ===== */
+#initialScreen.fadeOut {
+  animation: fadeOutScreen 1.2s ease-in-out forwards;
+}
+
+/* Animação de desaparecer a tela inicial */
+@keyframes fadeOutScreen {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
