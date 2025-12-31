@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<!--
+  A linha acima define o idioma do site como português do Brasil.
+-->
+<head>
+  <meta charset="UTF-8">
+  <!-- Define o padrão de caracteres (acentos funcionarem corretamente) -->
+
+  <title>De Rômulo para Thaís</title>
+  <!-- Título que aparece na aba do navegador -->
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Conecta o arquivo CSS, responsável pelo visual do site -->
+</head>
+<body>
+
+<!-- ÁUDIO DA MÚSICA -->
+
+<audio id="music" loop>
+  <!-- Tag de áudio. O atributo 'loop' faz a música repetir -->
+  <source src="musica.mp3" type="audio/mpeg">
+  <!-- Arquivo da música que será tocada -->
+</audio>
+
+<!-- LOGIN / TELA INICIAL -->
+
+<div class="container" id="login">
+  <!-- Div principal do login -->
+
+  <h1>Qual é o  nome da mulher que eu tanto amo ?</h1>
+  <!-- Título mostrado na tela -->
+
+  <input type="text" id="nameInput" placeholder="Digite seu nome minha amada">
+  <!-- Campo onde a pessoa digita o nome -->
+
+<button onclick="verificarNome()">Entrar 💖</button>
+
+  <!-- Botão que chama a função verificarNome() no JavaScript -->
+
+  <p id="errorMsg" class="error hidden">Nome incorreto… esse não e o nome da minha amada </p>
+  <!-- Mensagem de erro que começa escondida -->
+</div>
+
+<!-- TELA DA CARTA FECHADA -->
+
+<div id="initialScreen" class="hidden">
+  <!-- Essa tela começa escondida -->
+
+  <img src="tata.jpeg" alt="Carta de Amor" id="cartaFechada">
+  <!-- Imagem da carta fechada -->
+</div>
+
+<!-- CARTA ABERTA -->
+
+<div class="container hidden" id="letter">
+  <!-- Div da carta aberta, começa escondida -->
+
+  <h1>De Rômulo para Thaís ❤️</h1>
+  <!-- Título da carta -->
+
+  <div class="heart">❤️</div>
+  <!-- Coração decorativo -->
+
+  <p id="typedText"></p>
+  <!-- Texto que será escrito aos poucos pelo JavaScript -->
+</div>
+<div id="finalPoem" class="final-poem hidden">
+  <p>
+    E, se você chegou até aqui…<br><br>
+
+    Saiba que nada foi pressa,<br>
+    nem promessa vazia.<br>
+    Foi só verdade,<br>
+    dita com cuidado.<br><br>
+
+    Eu não te peço nada,<br>
+    além do tempo.<br>
+    Do tempo certo.<br>
+    Do tempo que respeita.<br><br>
+
+    Se for comigo,<br>
+    caminho ao seu lado.<br>
+    Se não for,<br>
+    ainda assim te desejo feliz.<br><br>
+
+    Porque o que eu sinto<br>
+    é amor —<br>
+    calmo, sincero,<br>
+    e real.
+  </p>
+
+  <div class="final-heart">❤️</div>
+
+  <span class="signature">— Rômulo</span>
+</div>
+
+
+<!-- EMAILJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+  emailjs.init("n-jEwky-dWFldiLIh");
+})();
+</script>
+
+<script>
+function notificarAcesso() {
+  const agora = new Date();
+
+  emailjs.send("service_ae70j3j", "template_k990g0q", {
+    site: "https://romuloconnlynefonntynelly-del.github.io/cartas-de-amor/",
+    data: agora.toLocaleDateString("pt-BR"),
+    hora: agora.toLocaleTimeString("pt-BR")
+  })
+  .then(() => {
+    console.log("📧 E-mail de acesso enviado");
+  })
+  .catch((error) => {
+    console.error("Erro ao enviar e-mail:", error);
+  });
+}
+</script>
+
+<!-- JAVASCRIPT -->
+
+<script src="script.js"></script>
+
+<!-- Conecta o arquivo JavaScript, responsável pela lógica do site -->
+
+</body>
+</html>
