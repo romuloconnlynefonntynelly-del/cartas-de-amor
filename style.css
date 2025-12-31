@@ -153,9 +153,10 @@ button:hover {
   height: 100vh; /* Tela inteira */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centraliza verticalmente */
+  justify-content: flex-start; /* Centraliza verticalmente */
   align-items: center; /* Centraliza horizontalmente */
   background: transparent;
+  padding-top: 60px;
 }
 
 /* Força esconder a tela inicial */
@@ -221,3 +222,4 @@ button:hover {
 #finalPoem {
   display: none !important; /* Nunca mostrar este bloco */
 }
+
